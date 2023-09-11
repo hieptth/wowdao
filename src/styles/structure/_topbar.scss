@@ -1,0 +1,34 @@
+//
+// topbar.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.top-bar {
+    width: $body-width;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    z-index: 9;
+    top: $body-margin-top;
+    left: 50%;
+    height: $topbar-height;
+    transform: translateX(-50%);
+    justify-content: space-between;
+
+    &__left {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__btn-list {
+        display: none;
+        @include transition(display);
+
+        @include for-desktop-up {
+            display: block;
+        }
+    }
+}
